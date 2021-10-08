@@ -1,0 +1,21 @@
+.green{
+    background-color: #6ee135;
+}
+.red{
+    background-color: #EF2A50;
+}
+.red-btn{
+    background-color: #dd0b0b;
+}
+.dark-green{
+    background-color: #02b602;
+}
+.money{
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+.balance-text{
+    font-size: 20px;
+    font-weight: 600;
+}
