@@ -1,45 +1,54 @@
+import {Box, Card, CardContent, Typography} from "@mui/material";
 import React from 'react';
 import "./style.css"
-import {useSelector} from "react-redux";
+import Grid from '@mui/material/Grid';
 
 const BalanceInfo = () => {
-    const {initialAmount, costs, currentBalance} = useSelector(s => s.tasks)
     return (
-        <div className="my-5">
-            <h1 className="my-3">Ваш лист расходов</h1>
-            <div className="row">
-                <div className="col-md-4 mb-3">
-                    <div className="card">
-                        <div className="card-body">
-                            <p className="money">{initialAmount} $</p>
-                        </div>
-                        <div className="card-body dark-green">
-                            <p className="balance-text">Начальная сумма</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-4 mb-3">
-                    <div className="card">
-                        <div className="card-body">
-                            <p className="money">{costs} $</p>
-                        </div>
-                        <div className="card-body red">
-                            <p className="balance-text">Потрачено</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-4 mb-3">
-                    <div className="card">
-                        <div className="card-body">
-                            <p className="money">{currentBalance} $</p>
-                        </div>
-                        <div className="card-body green">
-                            <p className="balance-text">Остаток</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Grid container spacing={2}>
+            <Grid item xs={4}>
+                <Card>
+                    <Box sx={{bgcolor: "info.main", color: "white"}}>
+                        <CardContent>
+                            <Typography variant="h5" component="div" >
+                                400%
+                            </Typography>
+                            <Typography sx={{fontSize: "14"}} gutterBottom>
+                                Поступило
+                            </Typography>
+                        </CardContent>
+                    </Box>
+                </Card>
+            </Grid>
+            <Grid item xs={4}>
+                <Card>
+                    <Box sx={{bgcolor: "indianred", color: "white"}}>
+                        <CardContent>
+                            <Typography variant="h5" component="div" >
+                                0
+                            </Typography>
+                            <Typography sx={{fontSize: "14"}} gutterBottom>
+                                Расходы
+                            </Typography>
+                        </CardContent>
+                    </Box>
+                </Card>
+            </Grid>
+            <Grid item xs={4}>
+                <Card>
+                    <Box sx={{bgcolor: "darkgreen", color: "white"}}>
+                        <CardContent>
+                            <Typography variant="h5" component="div" >
+                                400%
+                            </Typography>
+                            <Typography sx={{fontSize: "14"}} gutterBottom>
+                               Остаток
+                            </Typography>
+                        </CardContent>
+                    </Box>
+                </Card>
+            </Grid>
+        </Grid>
     );
 };
 

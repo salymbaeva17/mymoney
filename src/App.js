@@ -3,17 +3,21 @@ import BalanceInfo from "./components/BalanceInfo";
 import ExpensesForm from "./components/ExpensesForm";
 import ExpensesList from "./components/ExpensesList";
 import Header from "./components/Header";
+import {Alert, Button, Container} from "@mui/material";
 
 const App = () => {
 
     return (
         <>
             <Header/>
-            <div className="container">
+            <Container maxWidth="xl">
+                <h1 className="my-3">Ваш лист расходов</h1>
                 <BalanceInfo/>
                 <ExpensesForm/>
                 <ExpensesList/>
-            </div>
+                <Alert>hello</Alert>
+                <Button >Click me!</Button>
+            </Container>
         </>
     );
 };
