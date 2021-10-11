@@ -1,8 +1,8 @@
-export const addCost = (data) => {
+export const addTask = (data) => {
     return {type:"ADD_TASK", payload: data}
 }
 
-export const deleteCost = (index) =>{
+export const deleteTask = (index) =>{
     return {type:"DELETE_TASK", payload: index}
 }
 export const resetAll = () =>{

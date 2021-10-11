@@ -9,10 +9,9 @@ const initialState = {
 export const tasksReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_TASK":
-            return {...state,
-                tasks: [...state.tasks, action.payload],
-                costs: state.costs + action.payload.balance,
-                currentBalance: state.currentBalance - action.payload.balance
+            return {...state, tasks: [...state.tasks, action.payload],
+                costs: state.costs + +action.payload.amount,
+                currentBalance: state.currentBalance - +action.payload.amount
             }
         case "DELETE_TASK":
             const task = state.tasks[action.payload]

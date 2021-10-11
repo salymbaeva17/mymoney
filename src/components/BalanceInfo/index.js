@@ -2,8 +2,10 @@ import {Box, Card, CardContent, Typography} from "@mui/material";
 import React from 'react';
 import "./style.css"
 import Grid from '@mui/material/Grid';
+import {useSelector} from "react-redux";
 
 const BalanceInfo = () => {
+    const {currentBalance, initialAmount, costs}= useSelector(store => store.tasks)
     return (
         <Grid container spacing={2}>
             <Grid item xs={4}>
@@ -11,7 +13,7 @@ const BalanceInfo = () => {
                     <Box sx={{bgcolor: "info.main", color: "white"}}>
                         <CardContent>
                             <Typography variant="h5" component="div" >
-                                400%
+                                {initialAmount}$
                             </Typography>
                             <Typography sx={{fontSize: "14"}} gutterBottom>
                                 Поступило
@@ -25,7 +27,7 @@ const BalanceInfo = () => {
                     <Box sx={{bgcolor: "indianred", color: "white"}}>
                         <CardContent>
                             <Typography variant="h5" component="div" >
-                                0
+                                {costs}$
                             </Typography>
                             <Typography sx={{fontSize: "14"}} gutterBottom>
                                 Расходы
@@ -39,7 +41,7 @@ const BalanceInfo = () => {
                     <Box sx={{bgcolor: "darkgreen", color: "white"}}>
                         <CardContent>
                             <Typography variant="h5" component="div" >
-                                400%
+                                {currentBalance}$
                             </Typography>
                             <Typography sx={{fontSize: "14"}} gutterBottom>
                                Остаток

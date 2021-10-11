@@ -3,7 +3,7 @@ import BalanceInfo from "./components/BalanceInfo";
 import ExpensesForm from "./components/ExpensesForm";
 import ExpensesList from "./components/ExpensesList";
 import Header from "./components/Header";
-import {Alert, Button, Container} from "@mui/material";
+import {Container} from "@mui/material";
 
 const App = () => {
 
@@ -15,8 +15,6 @@ const App = () => {
                 <BalanceInfo/>
                 <ExpensesForm/>
                 <ExpensesList/>
-                <Alert>hello</Alert>
-                <Button >Click me!</Button>
             </Container>
         </>
     );
